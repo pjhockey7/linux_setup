@@ -1,6 +1,7 @@
 pacman -Su
 
 #todo setup nvim for github, add email and username
+pacman -S --noconfirm openssh
 
 ln -s bashrc /home/pj/.bashrc
 source /home/pj/.bashrc
