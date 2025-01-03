@@ -9,6 +9,7 @@ set -o vi
 
 # alias ls='ls --color=auto'
 # PS1='[\u@\h \W]\$ '
+alias ls='ls --color=auto'
 alias ll='ls -l'
 alias la='ls -a'
 alias nv='nvim'

@@ -1,1 +1,5 @@
 background-opacity = 0.95
+theme = Dracula
+
+font-size = 10
+

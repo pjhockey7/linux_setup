@@ -1,5 +1,7 @@
 pacman -Su
 
+#todo setup nvim for github, add email and username
+
 ln -s bashrc /home/pj/.bashrc
 source /home/pj/.bashrc
 
@@ -20,4 +22,7 @@ pacman -S --noconfirm keepassxc
 #todo auto update with github
 
 pacman -S --noconfirm waybar
+#symlink waybar
+#fancy font symbols for waybar
+pacman -S --noconfirm otf-font-awesome
 pacman -S --noconfirm brightnessctl
