@@ -26,4 +26,10 @@ pacman -S --noconfirm waybar
 #symlink waybar
 #fancy font symbols for waybar
 pacman -S --noconfirm otf-font-awesome
+
+#audio
+pacman -S --noconfirm pipewire
+#nice audio gui
+pacman -S --noconfirm pavucontrol
+
 pacman -S --noconfirm brightnessctl
