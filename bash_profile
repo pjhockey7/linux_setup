@@ -3,6 +3,5 @@
 #
 
 exec hyprland
-systemctl start iwd
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc

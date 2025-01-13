@@ -13,11 +13,11 @@ pacman -S --noconfirm firefox
 
 #todo copy configs
 pacman -S --noconfirm ghostty
-ln -s /home/pj/.config/ghostty/config ghostty/config 
+ln -s ghostty/config /home/pj/.config/ghostty/config 
 
 pacman -S --noconfirm hyprland
 rm /home/pj/.config/hypr/hyprland.conf
-ln -s /home/pj/.config/hyprland.conf hyprland.conf
+ln -s hyprland.conf /home/pj/.config/hyprland.conf 
 
 pacman -S --noconfirm keepassxc
 #todo auto update with github
@@ -33,3 +33,6 @@ pacman -S --noconfirm pipewire
 pacman -S --noconfirm pavucontrol
 
 pacman -S --noconfirm brightnessctl
+
+pacman -S --noconfirm rofi
+ln -s rofi /home/pj/.config/rofi
