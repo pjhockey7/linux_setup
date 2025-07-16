@@ -18,6 +18,7 @@ alias ll='ls -l'
 alias la='ls -a'
 alias nv='nvim'
 alias hist='cat ~/.bash_history'
+alias sudo='sudo '
 
 #unlimited history
 export HISTFILESIZE=
