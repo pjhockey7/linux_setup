@@ -14,7 +14,7 @@ set -o vi
 # alias ls='ls --color=auto'
 # PS1='[\u@\h \W]\$ '
 alias ls='ls --color=auto'
-alias ll='ls -l'
+alias ll='ls -la'
 alias la='ls -a'
 alias nv='nvim'
 alias hist='cat ~/.bash_history'
@@ -41,3 +41,6 @@ function cl() {
 if [ -n "$DISPLAY" ]; then
   xset r rate 200 50
 fi
+
+#color the prompt
+export PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "

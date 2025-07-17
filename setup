@@ -36,3 +36,5 @@ pacman -S --noconfirm brightnessctl
 
 pacman -S --noconfirm rofi
 ln -s rofi /home/pj/.config/rofi
+
+#nvim may need ripgrep installed for the fuzyfinder

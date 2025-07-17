@@ -19,3 +19,6 @@ vim.opt.autoindent = true
 
 -- Do smart autoindenting when starting a new line
 vim.opt.smartindent = true
+
+-- Use clipboard for yank
+vim.opt.clipboard = "unnamedplus"
