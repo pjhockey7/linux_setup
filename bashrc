@@ -36,3 +36,8 @@ function cl() {
     fi;
     builtin cd "${new_directory}" && ls -l
 }
+
+# If running in an X session, set keyboard repeat delay and rate.
+if [ -n "$DISPLAY" ]; then
+  xset r rate 200 50
+fi
