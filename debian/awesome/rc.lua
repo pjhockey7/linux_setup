@@ -115,10 +115,11 @@ local taglist_buttons = gears.table.join(
 local function set_wallpaper(s)
     -- Wallpaper
     if beautiful.wallpaper then
-        local wallpaper = beautiful.wallpaper
-        -- If wallpaper is a function, call it with the screen
-        if type(wallpaper) == "function" then
-            wallpaper = wallpaper(s)
+        local wallpaper = "/home/psmigliani/Desktop/rtad-posters-dc.png"
+        if s.index == 1 then
+            wallpaper =  "/home/psmigliani/Desktop/SSN_Horizon.png"
+        elseif s.index == 2 then
+            wallpaper =  "/home/psmigliani/Desktop/WP_Roadrunner_v001.png"
         end
         gears.wallpaper.maximized(wallpaper, s, true)
     end
@@ -266,6 +267,17 @@ globalkeys = gears.table.join(
     awful.key({ modkey }, "r", function() menubar.show() end,   {description = "show the menubar", group = "launcher"})
 )
 
+local function move_client_prev_screen(c)
+  local current_index = c.screen.index
+  local total_screens = screen:count()
+  local target_index = current_index - 1
+  if target_index < 1 then
+    target_index = total_screens
+  end
+  local target_screen = screen[target_index]
+  c:move_to_screen(target_screen)
+end
+
 clientkeys = gears.table.join(
     awful.key({ modkey,           }, "f",
         function (c)
@@ -275,9 +287,14 @@ clientkeys = gears.table.join(
         {description = "toggle fullscreen", group = "client"}),
     awful.key({ modkey,           }, "c",      function (c) c:kill()                         end,   {description = "close", group = "client"}),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,   {description = "toggle floating", group = "client"}),
-    awful.key({ modkey,         }, "Return", function (c) c:swap(awful.client.getmaster()) end,   {description = "move to master", group = "client"}),
+    awful.key({ modkey,           }, "Return", function (c) c:swap(awful.client.getmaster()) end,   {description = "move to master", group = "client"}),
     awful.key({ modkey,           }, "o",      function (c) c:move_to_screen()               end,   {description = "move to screen", group = "client"}),
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,   {description = "toggle keep on top", group = "client"}),
+    awful.key({ modkey, "Shift"   }, "o", function(c)
+            if client.focus then
+                move_client_prev_screen(client.focus)
+            end
+        end, {description = "move client to previous screen", group = "client"}),
 
     awful.key({ modkey,           }, "m",
         function (c)
