@@ -25,8 +25,8 @@ export HISTFILESIZE=
 export HISTSIZE=
 
 #write history after every line
-shopt -s histappend
-PROMPT_COMMAND="history -a;history -n;$PROMPT_COMMAND"
+#shopt -s histappend
+#PROMPT_COMMAND="history -a;history -n;$PROMPT_COMMAND"
 
 
 function cl() {

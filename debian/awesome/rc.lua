@@ -111,6 +111,23 @@ local taglist_buttons = gears.table.join(
                     awful.button({ }, 5, function(t) awful.tag.viewprev(t.screen) end)
                 )
 
+-- Create a battery widget 
+local battery_widget = wibox.widget {
+    widget = wibox.widget.textbox,
+    align  = 'center',
+    valign = 'center'
+}
+
+-- Function to update the battery widget
+local update_battery = function(widget, stdout)
+    -- Remove any trailing whitespace/newlines and add an icon if desired.
+    local capacity = stdout:gsub("^%s*(.-)%s*$", "%1")
+    widget:set_text("🔋 " .. capacity .. "%")
+end
+
+-- Update every 30 seconds
+awful.widget.watch("cat /sys/class/power_supply/BAT0/capacity", 30, update_battery, battery_widget)
+
 
 local function set_wallpaper(s)
     -- Wallpaper
@@ -167,15 +184,15 @@ awful.screen.connect_for_each_screen(function(s)
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            mylauncher,
             s.mytaglist,
         },
         s.mypromptbox, -- Middle widget
         -- menubar,
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
-            wibox.widget.systray(),
+            -- mykeyboardlayout,
+            -- wibox.widget.systray(),
+            battery_widget,
             mytextclock,
             s.mylayoutbox,
         },
