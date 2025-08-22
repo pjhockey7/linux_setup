@@ -45,8 +45,9 @@ do
         in_error = false
     end)
 end
--- }}}
+-- }}
 
+awful.spawn.with_shell( "xinput set-prop 14 \"libinput Natural Scrolling Enabled\" 1 " )
 
 awful.spawn.with_shell("numlockx on")
 

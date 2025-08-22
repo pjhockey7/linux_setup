@@ -39,8 +39,11 @@ function cl() {
 
 # If running in an X session, set keyboard repeat delay and rate.
 if [ -n "$DISPLAY" ]; then
-  xset r rate 200 50
+  xset r rate 250 50
 fi
 
 #color the prompt
 export PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
+
+export EDITOR=nvim
+export VISUAL=nvim
