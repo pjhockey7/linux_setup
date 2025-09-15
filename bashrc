@@ -40,6 +40,10 @@ function cl() {
 # If running in an X session, set keyboard repeat delay and rate.
 if [ -n "$DISPLAY" ]; then
   xset r rate 250 50
+# If running in a Wayland session with Hyprland, set keyboard repeat delay and rate.
+elif [ -n "$WAYLAND_DISPLAY" ]; then
+  export WLR_KEYBOARD_REPEAT_RATE=50
+  export WLR_KEYBOARD_REPEAT_DELAY=250
 fi
 
 #color the prompt
