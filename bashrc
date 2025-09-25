@@ -43,7 +43,7 @@ if [ "$XDG_SESSION_TYPE" = "x11" ]; then
     xset r rate 250 50
 # If running in a Wayland session with Hyprland, set keyboard repeat delay and rate.
 elif [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-    #nothing to do.  Handled by hyprland.conf
+    : #nothing to do.  Handled by hyprland.conf
 else
     echo "Error from .bashrc: Seems to not be x11 or wayland?"
 fi
