@@ -44,6 +44,8 @@ if [ "$XDG_SESSION_TYPE" = "x11" ]; then
 # If running in a Wayland session with Hyprland, set keyboard repeat delay and rate.
 elif [ "$XDG_SESSION_TYPE" = "wayland" ]; then
     : #nothing to do.  Handled by hyprland.conf
+elif [ "$XDG_SESSION_TYPE" = "tty" ]; then
+    : #todo
 else
     echo "Error from .bashrc: Seems to not be x11 or wayland?"
 fi
