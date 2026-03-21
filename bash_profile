@@ -4,4 +4,7 @@
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-exec hyprland
+exec start-hyprland
+
+# Created by `pipx` on 2025-10-01 07:12:01
+export PATH="$PATH:/home/pj/.local/bin"

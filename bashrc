@@ -24,6 +24,8 @@ alias sudo='sudo '
 export HISTFILESIZE=
 export HISTSIZE=
 
+export PATH="$PATH:/home/pj/.local/bin/"
+
 #write history after every line
 #shopt -s histappend
 #PROMPT_COMMAND="history -a;history -n;$PROMPT_COMMAND"
@@ -53,3 +55,9 @@ export PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
 
 export EDITOR=nvim
 export VISUAL=nvim
+
+# Created by `pipx` on 2025-10-01 07:12:01
+export PATH="$PATH:/home/pj/.local/bin"
+
+
+export STM32_PRG_PATH=/home/pj/tools/bin
