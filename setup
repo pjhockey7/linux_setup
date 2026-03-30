@@ -11,6 +11,8 @@ pacman -S --noconfirm neovim
 
 pacman -S --noconfirm firefox
 
+pacman -S --noconfirm man-db
+
 #todo copy configs
 pacman -S --noconfirm ghostty
 ln -s ghostty/config /home/pj/.config/ghostty/config 
